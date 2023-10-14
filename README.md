@@ -82,7 +82,7 @@ To exit the program press Ctrl-C
 If you don't make or clear any selections and you try to save the file repeatedly the output of the
 program won't change. It will only update the line lengths if you have changed something.
 
-### Example output from the 'Using both, hover-f and shift-click, to select traces'
+### Example output from 'Using both, hover-f and shift-click, to select traces'
 Upon saving the file in gEDA PCB.
 ```
 ~/projects/python/PCB_Trace_Lengths$ python3 trace_len.py ../../Vapor\ Ware\ Inc./Project_#1/Spectrum_Analyzer/Schematics/pwrsupvwi.pcb
