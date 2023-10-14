@@ -32,3 +32,17 @@ Checks for filename as command-line argument. If provided, calls `measure_select
 
 ## Summary
 Script monitors a `.pcb` file for changes. On modification, it checks lines for traces, computes their lengths, and prints results if different from previous output.
+
+
+## Example
+  ```python3 trace_len.py <path_to_pcb_file.pcb>```
+
+When the program starts it will just be waiting for you to save the file. If you have selected or
+highlighted any lines it will calculate and display the length of those lines. In PCB you can high-
+light an entire trace by hovering over the trace and pressing the 'f' key. Now when you save the
+program will report the length of the entire trace. If, instead, you use the mouse to click on one
+line at a time you can press shift-click to select multiple traces. If the selections are connected
+to each other then the program will report the combined, or total length. If they are not connected
+then you will get a report for each trace that you selected.
+
+To exit the program press Ctrl-C
