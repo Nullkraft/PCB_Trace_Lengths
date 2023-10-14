@@ -4,7 +4,7 @@ Making traces, such as spi_clock and spi_data, the same lengths ensures that the
 
 :warning: **DISCLAIMER:** The majority of this README and CODE was written by GPT4 using the Advanced Data Analysis plugin. The goal was to have a usable utility while doing layout of a circuit board.
 
-##PCB_Trace_Len chats with GPT4
+## PCB_Trace_Len chats with GPT4
 
 [First chat - Find 'line' & 'selected'](https://chat.openai.com/share/9d529607-6f24-44ea-b80e-3662a9a1fa26)
 
