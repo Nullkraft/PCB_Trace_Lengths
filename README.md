@@ -1,8 +1,26 @@
 # PCB_Trace_Lengths
 Python program that reports the length of a gEDA PCB trace marked with 'selected' or 'connected'.
-The code monitors modifications to a `.pcb` file, which commonly represents printed circuit board designs. It identifies specific lines within the file containing certain keywords, then calculates and prints the total length of traces represented by these lines upon detecting changes.
+Making traces, such as spi_clock and spi_data, the same lengths ensures that the data is clocked in at the correct time. The code monitors modifications to a `.pcb` file, which commonly represents printed circuit board designs. It identifies specific lines within the file containing certain keywords, then calculates and prints the total length of traces represented by these lines upon detecting changes.
 
-:warning: **DISCLAIMER:** The majority of this README and CODE was written by GPT4 using the Advanced Data Analysis plugin. The goal was to have a usable utility while doing layout of a circuit board. 
+:warning: **DISCLAIMER:** The majority of this README and CODE was written by GPT4 using the Advanced Data Analysis plugin. The goal was to have a usable utility while doing layout of a circuit board.
+
+##PCB_Trace_Len chats with GPT4
+
+[First chat - Find 'line' & 'selected'](https://chat.openai.com/share/9d529607-6f24-44ea-b80e-3662a9a1fa26)
+
+Second chat - :warning: **MISSING:** This chat was used to develop the following capabilities/functions
+- process_file()
+- parse_coordinates(line)
+- line_length(x1, y1, x2, y2)
+- find_connected_line(lines, x, y)
+- get_trace(lines, start_line)
+- measure_selected_lines(file_path)
+
+[Third chat - gEDA PCB Trace Lengths](https://chat.openai.com/share/d6942e3d-2f0b-46bd-9a15-04218aa3ae0e)
+
+[Fourth chat - Real-time File Modification Handling](https://chat.openai.com/share/21666a52-8d34-4ee8-bed1-d0b4d69fa6ba)
+
+Of course the most important chat, the second one, is the one I chose to delete. 
 
 ## Libraries Used:
 - **re**: Used for regular expression operations.
