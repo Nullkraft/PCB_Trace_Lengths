@@ -47,5 +47,27 @@ then you will get a report for each trace that you selected.
 
 To exit the program press Ctrl-C
 
-![Screen capture showing that none of the traces have been selected](./images/pwrsupvwi_no_select.png)
+**None of the traces have been selected**
+![None of the traces have been selected](./images/pwrsupvwi_no_select.png)
 
+**Using shift_click to select traces**
+![Using shift-click to select traces](./images/pwrsupvwi_shift_click.png)
+
+**Using hover-f to select traces**
+![Using hover-f to select traces](./images/pwrsupvwi_hover_f.png)
+
+**Using both, hover-f and shift-click, to select traces**
+![Using both, hover-f and shift-click, to select traces](./images/pwrsupvwi_both_methods.png)
+
+If you don't make or clear any selections and you try to save the file repeatedly the output of the
+program won't change. It will only update the line lengths if you have changed something.
+
+# Example output from the 'Using both, hover-f and shift-click, to select traces'
+Upon saving the file in gEDA PCB.
+```
+~/projects/python/PCB_Trace_Lengths$ python3 trace_len.py ../../Vapor\ Ware\ Inc./Project_#1/Spectrum_Analyzer/Schematics/pwrsupvwi.pcb
+ Trace 1:       2798.88 mils
+ Trace 2:       5416.95 mils
+ Trace 3:       210.00 mils
+```
+The reason it's showing 3 lengths is that the trace splits under the POWER PLUG footprint.
