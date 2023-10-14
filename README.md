@@ -47,9 +47,5 @@ then you will get a report for each trace that you selected.
 
 To exit the program press Ctrl-C
 
-'''
-
 ![Screen capture showing that none of the traces have been selected](./images/pwrsupvwi_no_select.png)
-
-'''
 
