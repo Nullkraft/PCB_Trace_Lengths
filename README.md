@@ -2,6 +2,8 @@
 Python program that reports the length of a gEDA PCB trace marked with 'selected' or 'connected'.
 The code monitors modifications to a `.pcb` file, which commonly represents printed circuit board designs. It identifies specific lines within the file containing certain keywords, then calculates and prints the total length of traces represented by these lines upon detecting changes.
 
+:warning: **DISCLAIMER:** The majority of this README and CODE was written by GPT4 using the Advanced Data Analysis plugin. The goal was to have a usable utility while doing layout of a circuit board. 
+
 ## Libraries Used:
 - **re**: Used for regular expression operations.
 - **pyinotify**: Monitors file and directory changes in real-time on Linux.
@@ -62,7 +64,7 @@ To exit the program press Ctrl-C
 If you don't make or clear any selections and you try to save the file repeatedly the output of the
 program won't change. It will only update the line lengths if you have changed something.
 
-# Example output from the 'Using both, hover-f and shift-click, to select traces'
+### Example output from the 'Using both, hover-f and shift-click, to select traces'
 Upon saving the file in gEDA PCB.
 ```
 ~/projects/python/PCB_Trace_Lengths$ python3 trace_len.py ../../Vapor\ Ware\ Inc./Project_#1/Spectrum_Analyzer/Schematics/pwrsupvwi.pcb
