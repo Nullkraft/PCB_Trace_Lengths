@@ -2,7 +2,7 @@
 Python program that reports the length of a gEDA PCB trace marked with 'selected' or 'connected'.
 Making traces, such as spi_clock and spi_data, the same lengths ensures that the data is clocked in at the correct time. The code monitors modifications to a `.pcb` file, which commonly represents printed circuit board designs. It identifies specific lines within the file containing certain keywords, then calculates and prints the total length of traces represented by these lines upon detecting changes.
 
-:warning: **DISCLAIMER:** The majority of this README and CODE was written by GPT4 using the Advanced Data Analysis plugin. The goal was to have a usable utility while doing layout of a circuit board.
+:warning: **DISCLAIMER:** The majority of the CODE, along with this README, was written by GPT4 using the Advanced Data Analysis plugin. The goal was to have a usable utility while doing layout of a circuit board.
 
 ## PCB_Trace_Len chats with GPT4
 
