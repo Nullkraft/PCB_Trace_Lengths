@@ -2,7 +2,7 @@
 Python program that reports the length of a gEDA PCB trace marked with 'selected' or 'connected'.
 Making traces, such as spi_clock and spi_data, the same lengths ensures that the data is clocked in at the correct time. The code monitors modifications to a `.pcb` file, which commonly represents printed circuit board designs. It identifies specific lines within the file containing certain keywords, then calculates and prints the total length of traces represented by these lines upon detecting changes.
 
-:warning: **DISCLAIMER:** The majority of the CODE, along with this README, was written by GPT4 using the Advanced Data Analysis plugin. The goal was to have a usable utility while doing layout of a circuit board.
+:warning: **DISCLAIMER:** The majority of the CODE, along with this README, was written by GPT4 using the Advanced Data Analysis plugin. The goal was to have a usable utility while doing layout of a circuit board and not be distracted by spending time writing a program.
 
 ## PCB_Trace_Len chats with GPT4
 
@@ -20,7 +20,7 @@ Second chat - :warning: **MISSING:** This chat was used to develop the following
 
 [Fourth chat - Real-time File Modification Handling](https://chat.openai.com/share/21666a52-8d34-4ee8-bed1-d0b4d69fa6ba)
 
-Of course the most important chat, the second one, is the one I chose to delete. 
+Of course the most important chat, the second one, is the one I chose to delete.
 
 ## Libraries Used:
 - **re**: Used for regular expression operations.
