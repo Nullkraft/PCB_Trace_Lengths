@@ -2,26 +2,6 @@
 Python program that reports the length of a gEDA PCB trace marked with 'selected' or 'connected'.
 Making traces, such as spi_clock and spi_data, the same lengths ensures that the data is clocked in at the correct time. The code monitors modifications to a `.pcb` file, which commonly represents printed circuit board designs. It identifies specific lines within the file containing certain keywords, then calculates and prints the total length of traces represented by these lines upon detecting changes.
 
-:warning: **DISCLAIMER:** The majority of the CODE, along with this README, was written by GPT4 using the Advanced Data Analysis plugin. The goal was to have a usable utility while doing layout of a circuit board and not be distracted by spending time writing a program.
-
-## PCB_Trace_Len chats with GPT4
-
-[First chat - Find 'line' & 'selected'](https://chat.openai.com/share/9d529607-6f24-44ea-b80e-3662a9a1fa26)
-
-Second chat - :warning: **MISSING:** This chat was used to develop the following capabilities/functions
-- process_file()
-- parse_coordinates(line)
-- line_length(x1, y1, x2, y2)
-- find_connected_line(lines, x, y)
-- get_trace(lines, start_line)
-- measure_selected_lines(file_path)
-
-[Third chat - gEDA PCB Trace Lengths](https://chat.openai.com/share/d6942e3d-2f0b-46bd-9a15-04218aa3ae0e)
-
-[Fourth chat - Real-time File Modification Handling](https://chat.openai.com/share/21666a52-8d34-4ee8-bed1-d0b4d69fa6ba)
-
-Of course the most important chat, the second one, is the one I chose to delete.
-
 ## Libraries Used:
 - **re**: Used for regular expression operations.
 - **pyinotify**: Monitors file and directory changes in real-time on Linux.
@@ -56,14 +36,38 @@ Script monitors a `.pcb` file for changes. On modification, it checks lines for 
 
 ## Example
   ```python3 trace_len.py <path_to_pcb_file.pcb>```
+---
 
-When the program starts it will just be waiting for you to save the file. If you have selected or
-highlighted any lines it will calculate and display the length of those lines. In PCB you can high-
-light an entire trace by hovering over the trace and pressing the 'f' key. Now when you save the
-program will report the length of the entire trace. If, instead, you use the mouse to click on one
-line at a time you can press shift-click to select multiple traces. If the selections are connected
-to each other then the program will report the combined, or total length. If they are not connected
-then you will get a report for each trace that you selected.
+`trace_len.py` is a tool designed for monitoring the length of one or more traces during the layout of tracks in the gEDA PCB program. Although gEDA PCB does not inherently support monitoring trace lengths, this script utilizes available features to perform this function effectively.
+
+**Features of gEDA PCB for Monitoring:**
+- **Manual Selection:** You can manually select each portion of a trace that you want to monitor.
+- **Automatic Discovery:** Utilize the ‘F’ key while hovering over a trace to find and select everything connected to that trace. Note that using the ‘F’ key will identify all branches connected to the trace, which is most useful for single, uninterrupted lines.
+
+**Functionality:**
+- Once you have selected all relevant lines and saved the changes, `trace_len.py` will detect this and calculate the lengths of all lines marked as ‘selected’ and ‘found’.
+- The script determines which line sections are connected end-to-end and sums their lengths. For instance, if you select 4 connected sections of one line and 13 connected sections of another, the app will report two separate line lengths. If the selected lines split at any point, the app will report the number of distinct lines as 3 or more.
+
+**Usage:**
+To operate the app, use the following command:
+```
+python3 trace_len.py <path_to_pcb_file.pcb>
+```
+
+**Operational Notes:**
+- When started, the program will initially be in a waiting state.
+- In gEDA’s PCB design software, use shift-click to select multiple connected traces.
+- To compare the lengths of two or more lines, continue connecting another set of line sections. Upon saving your changes, the app will report the lengths of as many line sections as you have selected.
+- If no selections are made or cleared, and you attempt to save the file repeatedly, the output will remain unchanged. The program only updates the line lengths if there are changes to the selections.
+- To exit the program, press Ctrl-C.
+
+---
+When the program starts it will be waiting.
+
+In gEDA's PCB design software you shift-click to select multiple connected traces.
+To compare the lengths of 2 or more lines, continue connecting another set of line
+sections. Upon saving your changes the app will report the lengths of as many line
+sections as you have.
 
 To exit the program press Ctrl-C
 
