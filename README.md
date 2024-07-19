@@ -1,5 +1,19 @@
 # PCB_Trace_Lengths
-This program, designed specifically for gEDA PCB users, dynamically reports the lengths of traces marked as 'selected' or 'connected'. By ensuring that traces like spi_clock and spi_data are of equal length, the program helps maintain precise timing for data clocking—crucial for optimal circuit performance. The script actively watches for any changes in your ASCII formatted .pcb file which gEDA uses for printed circuit board designs. Whenever it detects updates, it calculates the total length of the corresponding traces, instantly providing you with the updated measurements.
+This program, designed specifically for gEDA PCB users, dynamically reports the lengths of selected traces. By ensuring that traces like spi_clock and spi_data are of equal length, the program helps maintain precise timing for data clocking—crucial for optimal circuit performance. The script actively watches for any changes in your ASCII formatted .pcb file which gEDA uses for printed circuit board designs. Whenever it detects updates it calculates the total length of the corresponding traces and provides you with the updated measurements.
+
+**Features of gEDA PCB for Monitoring:**
+- **Manual Selection:** You can manually select each portion of a trace that you want to monitor.
+- **Automatic Selection:** Utilize the ‘F’ key while hovering over a trace to find and select everything connected to that trace. Note that using the ‘F’ key will identify all branches connected to the trace, which is most useful for single, uninterrupted lines.
+
+**Functionality:**
+- Once you have selected all relevant lines and saved the changes, `trace_len.py` will detect this and calculate the lengths of all lines marked as ‘selected’ and ‘found’.
+- The script determines which line sections are connected end-to-end and sums their lengths. For instance, if you select 4 connected sections of one line and 13 connected sections of another, the app will report two separate line lengths. If the selected lines fork at any point, the app will report the number of distinct lines as 3 or more.
+
+**Usage:**
+To operate the app, use the following command:
+```
+python3 trace_len.py <path_to_pcb_file.pcb>
+```
 
 ## Libraries Used:
 - **re**: Used for regular expression operations.
@@ -34,22 +48,6 @@ The script monitors a `.pcb` file for any changes. On modification, it finds tra
 
 
 ## Example
-
-`trace_len.py` is a tool designed for monitoring the length of one or more traces during the layout of tracks in the gEDA PCB program. Although gEDA PCB does not inherently support monitoring trace lengths, this script utilizes available features to perform this function effectively.
-
-**Features of gEDA PCB for Monitoring:**
-- **Manual Selection:** You can manually select each portion of a trace that you want to monitor.
-- **Automatic Discovery:** Utilize the ‘F’ key while hovering over a trace to find and select everything connected to that trace. Note that using the ‘F’ key will identify all branches connected to the trace, which is most useful for single, uninterrupted lines.
-
-**Functionality:**
-- Once you have selected all relevant lines and saved the changes, `trace_len.py` will detect this and calculate the lengths of all lines marked as ‘selected’ and ‘found’.
-- The script determines which line sections are connected end-to-end and sums their lengths. For instance, if you select 4 connected sections of one line and 13 connected sections of another, the app will report two separate line lengths. If the selected lines split at any point, the app will report the number of distinct lines as 3 or more.
-
-**Usage:**
-To operate the app, use the following command:
-```
-python3 trace_len.py <path_to_pcb_file.pcb>
-```
 
 **Operational Notes:**
 - When started, the program will initially be in a waiting state.
