@@ -30,7 +30,7 @@ Sets up inotify watch to monitor file modifications.
 Checks for filename as command-line argument. If provided, calls `measure_selected_lines` with filename. Otherwise, prints error message.
 
 ## Summary
-Script monitors a `.pcb` file for changes. On modification, it checks lines for traces, computes their lengths, and prints results if different from previous output.
+The script monitors a `.pcb` file for any changes. On modification, it finds traces marked as "found" or "selected", computes their lengths, and prints a new result if the line lengths differ from previous output.
 
 
 ## Example
