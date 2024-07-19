@@ -35,7 +35,6 @@ Script monitors a `.pcb` file for changes. On modification, it checks lines for 
 
 
 ## Example
----
 
 `trace_len.py` is a tool designed for monitoring the length of one or more traces during the layout of tracks in the gEDA PCB program. Although gEDA PCB does not inherently support monitoring trace lengths, this script utilizes available features to perform this function effectively.
 
@@ -59,16 +58,6 @@ python3 trace_len.py <path_to_pcb_file.pcb>
 - To compare the lengths of two or more lines, continue connecting another set of line sections. Upon saving your changes, the app will report the lengths of as many line sections as you have selected.
 - If no selections are made or cleared, and you attempt to save the file repeatedly, the output will remain unchanged. The program only updates the line lengths if there are changes to the selections.
 - To exit the program, press Ctrl-C.
-
----
-When the program starts it will be waiting.
-
-In gEDA's PCB design software you shift-click to select multiple connected traces.
-To compare the lengths of 2 or more lines, continue connecting another set of line
-sections. Upon saving your changes the app will report the lengths of as many line
-sections as you have.
-
-To exit the program press Ctrl-C
 
 **None of the traces have been selected**
 ![None of the traces have been selected](./images/pwrsupvwi_no_select.png)
