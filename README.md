@@ -1,5 +1,5 @@
 # PCB_Trace_Lengths
-This program, designed specifically for gEDA PCB users, dynamically reports the lengths of traces marked as 'selected' or 'connected'. By ensuring that traces like spi_clock and spi_data are of equal length, the program helps maintain precise timing for data clocking—crucial for optimal circuit performance. The script actively watches for any changes in your .pcb files, which are ASCII formatted files used for printed circuit designs in gEDA. Whenever it detects updates, it calculates the total length of the corresponding traces, instantly providing you with the updated measurements.
+This program, designed specifically for gEDA PCB users, dynamically reports the lengths of traces marked as 'selected' or 'connected'. By ensuring that traces like spi_clock and spi_data are of equal length, the program helps maintain precise timing for data clocking—crucial for optimal circuit performance. The script actively watches for any changes in your ASCII formatted .pcb file which gEDA uses for printed circuit board designs. Whenever it detects updates, it calculates the total length of the corresponding traces, instantly providing you with the updated measurements.
 
 ## Libraries Used:
 - **re**: Used for regular expression operations.
