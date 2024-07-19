@@ -35,7 +35,6 @@ Script monitors a `.pcb` file for changes. On modification, it checks lines for 
 
 
 ## Example
-  ```python3 trace_len.py <path_to_pcb_file.pcb>```
 ---
 
 `trace_len.py` is a tool designed for monitoring the length of one or more traces during the layout of tracks in the gEDA PCB program. Although gEDA PCB does not inherently support monitoring trace lengths, this script utilizes available features to perform this function effectively.
